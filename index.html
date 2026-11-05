@@ -1,1 +1,415 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELEN | 25th Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #08070c;
+  --purple: #21132e;
+  --violet: #8d6bb0;
+  --silver: #d8cde3;
+  --muted: #a99caf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 40%, #321b493d 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 90%, #5b34701c 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, #fff 100%, transparent),
+    radial-gradient(1px 1px at 80% 15%, #c9a9ef 100%, transparent),
+    radial-gradient(1px 1px at 40% 70%, #fff 100%, transparent),
+    radial-gradient(1px 1px at 90% 80%, #fff 100%, transparent),
+    radial-gradient(1px 1px at 20% 85%, #b99bd7 100%, transparent),
+    radial-gradient(1px 1px at 60% 30%, #fff 100%, transparent);
+  background-size: 350px 350px;
+  opacity: .5;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 20px;
+  position: relative;
+}
+
+.invitation {
+  width: 100%;
+  max-width: 620px;
+  text-align: center;
+  padding: 65px 35px;
+  border: 1px solid #8d6bb044;
+  background: linear-gradient(
+    145deg,
+    #21132eaa,
+    #0c0912ee 70%
+  );
+  position: relative;
+}
+
+.invitation::before,
+.invitation::after {
+  content: "✦";
+  position: absolute;
+  color: var(--violet);
+  font-size: 17px;
+}
+
+.invitation::before {
+  top: 18px;
+  left: 20px;
+}
+
+.invitation::after {
+  bottom: 18px;
+  right: 20px;
+}
+
+.top-label {
+  font-size: 9px;
+  letter-spacing: 5px;
+  color: var(--silver);
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.scorpio {
+  font-size: 43px;
+  color: var(--violet);
+  margin-bottom: 10px;
+  text-shadow: 0 0 25px #a77bd477;
+}
+
+.constellation {
+  width: 180px;
+  height: 65px;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(65px, 12vw, 100px);
+  font-weight: 300;
+  letter-spacing: 9px;
+  line-height: 1;
+  color: #eee4f4;
+}
+
+.age {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  color: var(--violet);
+  letter-spacing: 8px;
+  margin-top: 12px;
+}
+
+.subtitle {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--silver);
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+.line {
+  width: 55px;
+  height: 1px;
+  background: var(--violet);
+  margin: 35px auto;
+}
+
+.message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #e7ddea;
+  margin-bottom: 35px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin: 30px 0;
+}
+
+.detail-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  color: #f3eaf7;
+}
+
+.venue {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  color: #c9a9e5;
+  margin-top: 10px;
+}
+
+.venue-sub {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.countdown-title {
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--silver);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 35px;
+}
+
+.time-box {
+  min-width: 55px;
+}
+
+.time-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: #e5d1f3;
+}
+
+.time-label {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.footer {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: #bda5ca;
+  margin-top: 25px;
+}
+
+@media(max-width: 480px) {
+  .invitation {
+    padding: 55px 18px;
+  }
+
+  .details {
+    gap: 25px;
+  }
+
+  .detail-value {
+    font-size: 20px;
+  }
+
+  .countdown {
+    gap: 13px;
+  }
+
+  .time-number {
+    font-size: 30px;
+  }
+
+  .message {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<main class="container">
+  <section class="invitation">
+
+    <div class="top-label">
+      An Evening to Remember
+    </div>
+
+    <div class="scorpio">♏</div>
+
+    <!-- Scorpio constellation -->
+    <svg class="constellation" viewBox="0 0 180 65"
+         fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 15 L40 28 L62 12 L82 37 L105 25 L126 42 L150 30 L166 48"
+        stroke="#a989c7" stroke-width="0.8"/>
+      <path d="M126 42 L145 53 L166 48"
+        stroke="#a989c7" stroke-width="0.8"/>
+      <g fill="#e8d9f5">
+        <circle cx="15" cy="15" r="2"/>
+        <circle cx="40" cy="28" r="2"/>
+        <circle cx="62" cy="12" r="2.5"/>
+        <circle cx="82" cy="37" r="2"/>
+        <circle cx="105" cy="25" r="2"/>
+        <circle cx="126" cy="42" r="2.5"/>
+        <circle cx="150" cy="30" r="2"/>
+        <circle cx="166" cy="48" r="2"/>
+        <circle cx="145" cy="53" r="1.5"/>
+      </g>
+    </svg>
+
+    <h1>ELEN</h1>
+    <div class="age">XXV</div>
+    <div class="subtitle">The 25th Birthday</div>
+
+    <div class="line"></div>
+
+    <p class="message">
+      Some nights are simply magical.<br>
+      And this one is all about celebrating you.
+    </p>
+
+    <div class="details">
+
+      <div>
+        <div class="detail-label">Date</div>
+        <div class="detail-value">November 20</div>
+      </div>
+
+      <div>
+        <div class="detail-label">Time</div>
+        <div class="detail-value">19:00</div>
+      </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <div class="detail-label">The Celebration Takes Place At</div>
+
+    <div class="venue">Em Sherif Cafe</div>
+
+    <div class="venue-sub">
+      AN EVENING OF ELEGANCE & MAGIC
+    </div>
+
+    <div class="line"></div>
+
+    <div class="countdown-title">
+      The Countdown Begins
+    </div>
+
+    <div class="countdown">
+
+      <div class="time-box">
+        <div class="time-number" id="days">00</div>
+        <div class="time-label">DAYS</div>
+      </div>
+
+      <div class="time-box">
+        <div class="time-number" id="hours">00</div>
+        <div class="time-label">HOURS</div>
+      </div>
+
+      <div class="time-box">
+        <div class="time-number" id="minutes">00</div>
+        <div class="time-label">MINUTES</div>
+      </div>
+
+      <div class="time-box">
+        <div class="time-number" id="seconds">00</div>
+        <div class="time-label">SECONDS</div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      With love, see you under the stars.
+    </div>
+
+  </section>
+</main>
+
+<script>
+const birthday = new Date("2026-11-20T19:00:00+04:00").getTime();
+
+function updateCountdown() {
+
+  const now = Date.now();
+  const distance = birthday - now;
+
+  if (distance <= 0) {
+    document.querySelector(".countdown-title").textContent =
+      "The Celebration Has Begun ✨";
+
+    ["days", "hours", "minutes", "seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
+
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  document.getElementById("days").textContent =
+    String(days).padStart(2, "0");
+
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
+
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
+
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
+
